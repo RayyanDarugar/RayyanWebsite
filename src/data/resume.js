@@ -166,7 +166,7 @@ export const resumeData = {
         "Cooking",
         "Jiu-Jitsu",
         "Soccer",
-        "Sports Videography",
+        "Videography",
         "Volleyball",
         "Portrait Photography",
         "Surfing",
