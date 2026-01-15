@@ -1,5 +1,6 @@
 import React from 'react';
 import ResumeSection from '../components/ResumeSection';
+import AnimatedResume from '../components/AnimatedResume';
 import BentoGrid from '../components/BentoGrid';
 import { resumeData } from '../data/resume';
 
@@ -50,11 +51,11 @@ const Home = () => {
                     ))}
                 </section>
 
-                {/* Experience Section */}
-                <ResumeSection title="Experience" items={resumeData.experience} />
+                {/* Experience Section (Animated) */}
+                <AnimatedResume title="Experience" items={resumeData.experience} />
 
-                {/* Leadership Section */}
-                <ResumeSection title="Leadership" items={resumeData.leadership} />
+                {/* Leadership Section (Animated) */}
+                <AnimatedResume title="Leadership" items={resumeData.leadership} />
 
                 {/* Skills Section */}
                 <section className="mb-16">
