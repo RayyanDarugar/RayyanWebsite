@@ -23,7 +23,8 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
-                        <Link to="/" className="font-bold text-xl tracking-wider hover:text-forest-accent-main transition-colors text-white">
+                        <Link to="/" className="flex items-center font-bold text-xl tracking-wider hover:text-forest-accent-main transition-colors text-white">
+                            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-8 h-8 mr-2" />
                             RAYYAN DARUGAR
                         </Link>
                     </div>
