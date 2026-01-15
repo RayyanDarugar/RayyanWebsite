@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
 import Contact from './pages/Contact';
+import AuroraBackground from './components/AuroraBackground';
 
 // Using HashRouter for easiest GitHub Pages deployment compatibility
 // preventing 404 errors on refresh without server configuration.
@@ -16,12 +17,14 @@ function App() {
         <Navbar />
 
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<Post />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <AuroraBackground>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<Post />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AuroraBackground>
         </main>
 
         <Footer />
