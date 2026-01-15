@@ -32,7 +32,7 @@ const BentoGrid = () => {
                                 Let's Talk <ArrowRight size={18} className="ml-2" />
                             </Link>
                             <a
-                                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                                href={import.meta.env.DEV ? '/resume.pdf' : `${import.meta.env.BASE_URL}resume.pdf`}
                                 download="Rayyan_Darugar_Resume.pdf"
                                 className="inline-flex items-center px-6 py-3 bg-forest-bg-elevated text-forest-text-primary rounded-xl font-medium hover:bg-forest-bg-elevated/80 transition-all hover:scale-[1.02]"
                             >
@@ -45,7 +45,7 @@ const BentoGrid = () => {
                 {/* 2. Location Card (Small) - Spans 2 cols, 1 row */}
                 <SpotlightCard className="md:col-span-2 md:row-span-1 p-6 flex flex-col justify-center items-center text-center group hover:border-forest-accent-soft/30 transition-all duration-300">
                     {/* <div className="absolute inset-0 bg-gradient-to-br from-forest-bg-elevated/0 to-forest-bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
-                    <div className="bg-forest-bg-elevated/50 p-3 rounded-full mb-3 text-forest-accent-soft group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-forest-bg-elevated/50 p-3 rounded-full mb-3 inline-flex justify-center items-center text-forest-accent-soft group-hover:scale-110 transition-transform duration-300">
                         <MapPin size={24} />
                     </div>
                     <h3 className="text-forest-text-primary font-medium z-10">{resumeData.basics.location}</h3>

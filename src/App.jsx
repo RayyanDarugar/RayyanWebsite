@@ -10,6 +10,7 @@ import ProjectDetails from './pages/ProjectDetails';
 import Post from './pages/Post';
 import Contact from './pages/Contact';
 import AuroraBackground from './components/AuroraBackground';
+import VinylPlayer from './components/VinylPlayer';
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -44,6 +45,7 @@ function App() {
         </AuroraBackground>
       </main>
 
+      <VinylPlayer />
       <Footer />
     </div>
   );

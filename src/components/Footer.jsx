@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-forest-bg-secondary text-forest-text-muted py-8 mt-auto border-t border-forest-bg-elevated">
+        <footer id="site-footer" className="bg-forest-bg-secondary text-forest-text-muted py-8 mt-auto border-t border-forest-bg-elevated">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-4 md:mb-0">
                     <p className="text-sm">© {new Date().getFullYear()} Rayyan Darugar. All rights reserved.</p>
