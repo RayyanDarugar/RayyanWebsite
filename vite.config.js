@@ -8,7 +8,6 @@ export default defineConfig({
   // If deployed to user.github.io, this should be '/'
   // If deployed to user.github.io/repo-name, this should be '/repo-name/'
   // For now we'll surmise based on standard usage or user instructions.
-  // User asked for "GitHub Pages–ready build output".
-  // Using './' is often safer for relative paths in generic deployments.
-  base: './',
+  // Base path for GitHub Pages
+  base: '/RayyanWebsite/',
 })
