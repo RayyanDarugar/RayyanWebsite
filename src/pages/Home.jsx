@@ -1,57 +1,17 @@
 import React from 'react';
-import { Download, ArrowRight, MapPin, Mail, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import ResumeSection from '../components/ResumeSection';
+import BentoGrid from '../components/BentoGrid';
 import { resumeData } from '../data/resume';
 
 const Home = () => {
     return (
         <div className="animate-fade-in">
-            {/* Hero Section */}
-            <section className="bg-forest-bg-primary py-20 px-4 sm:px-6 lg:px-8 text-center border-b border-forest-bg-elevated">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl font-bold text-forest-text-primary mb-4 tracking-tight">
-                        {resumeData.basics.name}
-                    </h1>
-                    <p className="text-xl md:text-2xl text-forest-text-secondary mb-6 font-light max-w-2xl mx-auto leading-relaxed">
-                        {resumeData.basics.title}
-                    </p>
-
-                    <div className="flex flex-col items-center justify-center space-y-2 mb-8 text-forest-text-muted text-sm md:text-base">
-                        <div className="flex items-center space-x-6">
-                            <span className="flex items-center"><MapPin size={16} className="mr-1" /> {resumeData.basics.location}</span>
-                            <a href={`mailto:${resumeData.basics.email}`} className="flex items-center hover:text-forest-accent-main transition-colors"><Mail size={16} className="mr-1" /> Contact</a>
-                            <a href={resumeData.basics.linkedin} target="_blank" rel="noreferrer" className="flex items-center hover:text-forest-accent-main transition-colors"><Linkedin size={16} className="mr-1" /> LinkedIn</a>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Link
-                            to="/blog"
-                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-forest-accent-main hover:bg-forest-accent-main/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-forest-accent-main/20"
-                        >
-                            Read My Blog <ArrowRight size={18} className="ml-2" />
-                        </Link>
-                        <Link
-                            to="/contact"
-                            className="inline-flex items-center justify-center px-6 py-3 border-2 border-forest-accent-main text-base font-medium rounded-lg text-forest-accent-main bg-transparent hover:bg-forest-accent-main/10 transition-all duration-200"
-                        >
-                            Contact Me
-                        </Link>
-                    </div>
-                </div>
+            {/* Hero / Bento Grid Section - Replaces old Hero & About */}
+            <section className="mb-8 pt-4">
+                <BentoGrid />
             </section>
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                {/* About Section */}
-                <section className="mb-16">
-                    <h2 className="text-2xl font-bold text-forest-text-primary mb-6 text-center border-b-2 border-forest-bg-elevated pb-2 inline-block mx-auto min-w-[200px]">About Me</h2>
-                    <div className="bg-forest-bg-secondary p-8 rounded-xl shadow-sm border border-forest-bg-elevated">
-                        <p className="text-lg text-forest-text-secondary leading-relaxed font-light">
-                            {resumeData.basics.summary}
-                        </p>
-                    </div>
-                </section>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
                 {/* Education Section (Custom for WBB) */}
                 <section className="mb-16">
