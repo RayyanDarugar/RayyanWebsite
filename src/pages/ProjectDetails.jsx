@@ -11,6 +11,14 @@ const ProjectDetails = () => {
         return <Navigate to="/projects" replace />;
     }
 
+    // Helper to resolve asset paths for GitHub Pages
+    const resolvePath = (path) => {
+        if (!path) return '';
+        if (path.startsWith('http')) return path;
+        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+        return `${import.meta.env.BASE_URL}${cleanPath}`;
+    };
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
             {/* Back Button */}
@@ -43,7 +51,7 @@ const ProjectDetails = () => {
                             {/* Video Container */}
                             <div className="aspect-video relative bg-black">
                                 <video
-                                    src={item.url}
+                                    src={resolvePath(item.url)}
                                     className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                                     controls
                                     playsInline

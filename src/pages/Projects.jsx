@@ -18,6 +18,16 @@ const Projects = () => {
         }
     }, [location]);
 
+    // Helper to resolve asset paths for GitHub Pages
+    const resolvePath = (path) => {
+        if (!path) return '';
+        if (path.startsWith('http')) return path; // External link
+        // Join base URL (e.g. '/repo/') with path (e.g. '/videos/vid.mp4')
+        // Remove leading slash from path to avoid double slash if base has trailing slash
+        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+        return `${import.meta.env.BASE_URL}${cleanPath}`;
+    };
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
             <h1 className="text-4xl font-bold text-forest-text-primary mb-6">Projects</h1>
@@ -39,7 +49,7 @@ const Projects = () => {
                                     <div className="w-full h-full relative group">
                                         {/* Placeholder video - autoplay muted loop for 'preview' feel */}
                                         <video
-                                            src={project.mediaUrl}
+                                            src={resolvePath(project.mediaUrl)}
                                             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                                             muted
                                             loop
@@ -55,7 +65,7 @@ const Projects = () => {
                                 ) : (
                                     <div className="w-full h-full relative group">
                                         <img
-                                            src={project.mediaUrl}
+                                            src={resolvePath(project.mediaUrl)}
                                             alt={project.title}
                                             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105"
                                         />
