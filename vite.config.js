@@ -9,5 +9,5 @@ export default defineConfig({
   // If deployed to user.github.io/repo-name, this should be '/repo-name/'
   // For now we'll surmise based on standard usage or user instructions.
   // Base path for GitHub Pages
-  base: '/RayyanWebsite/',
+  base: '/',
 })
