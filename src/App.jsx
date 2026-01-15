@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,28 +9,39 @@ import Post from './pages/Post';
 import Contact from './pages/Contact';
 import AuroraBackground from './components/AuroraBackground';
 
-// Using HashRouter for easiest GitHub Pages deployment compatibility
-// preventing 404 errors on refresh without server configuration.
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.3 }}
+  >
+    {children}
+  </motion.div>
+);
+
 function App() {
+  const location = useLocation();
+
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen bg-forest-bg-primary transition-colors duration-300">
-        <Navbar />
+    <div className="flex flex-col min-h-screen bg-forest-bg-primary transition-colors duration-300">
+      <Navbar />
 
-        <main className="flex-grow">
-          <AuroraBackground>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<Post />} />
-              <Route path="/contact" element={<Contact />} />
+      <main className="flex-grow">
+        <AuroraBackground>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+              <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
+              <Route path="/blog/:slug" element={<PageWrapper><Post /></PageWrapper>} />
+              <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
             </Routes>
-          </AuroraBackground>
-        </main>
+          </AnimatePresence>
+        </AuroraBackground>
+      </main>
 
-        <Footer />
-      </div>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 

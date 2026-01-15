@@ -45,7 +45,6 @@ export const resumeData = {
                 "Business Calculus",
                 "International Commerce",
                 "Economics",
-                "Marketing",
             ],
         },
     ],

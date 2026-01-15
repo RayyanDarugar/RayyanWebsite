@@ -43,7 +43,7 @@ const Home = () => {
                                     <span className="text-forest-text-muted">{edu.honors.join(", ")}</span>
                                 </div>
                                 <div className="flex flex-col sm:flex-row sm:items-baseline">
-                                    <span className="font-bold text-forest-text-secondary min-w-[100px]">Coursework:</span>
+                                    <span className="font-bold text-forest-text-secondary min-w-[100px]">Courses:</span>
                                     <span className="text-forest-text-muted">{edu.coursework.join(", ")}</span>
                                 </div>
                             </div>
