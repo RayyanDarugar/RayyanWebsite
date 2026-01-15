@@ -31,9 +31,13 @@ const BentoGrid = () => {
                             <Link to="/contact" className="inline-flex items-center px-6 py-3 bg-forest-accent-main text-white rounded-xl font-medium hover:bg-forest-accent-main/90 transition-all hover:scale-[1.02] shadow-lg shadow-forest-accent-main/20">
                                 Let's Talk <ArrowRight size={18} className="ml-2" />
                             </Link>
-                            <button className="inline-flex items-center px-6 py-3 bg-forest-bg-elevated text-forest-text-primary rounded-xl font-medium hover:bg-forest-bg-elevated/80 transition-all hover:scale-[1.02]">
+                            <a
+                                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                                download="Rayyan_Darugar_Resume.pdf"
+                                className="inline-flex items-center px-6 py-3 bg-forest-bg-elevated text-forest-text-primary rounded-xl font-medium hover:bg-forest-bg-elevated/80 transition-all hover:scale-[1.02]"
+                            >
                                 <Download size={18} className="mr-2" /> Resume
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </SpotlightCard>
