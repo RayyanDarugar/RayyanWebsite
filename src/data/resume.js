@@ -57,6 +57,7 @@ export const resumeData = {
             location: "Los Angeles, CA",
             startDate: "September 2025",
             endDate: "Present",
+            // relatedProjectId: "ecommerce-platform",
             bullets: [
                 "Founded a member accelerator program educating 25+ students on Product Management, Technology, Finance, Marketing, and Design",
                 "Led a team of 6 to win $500 at the LAUNCH Pitch Competition, earning Second Place Overall and Audience Choice Award",
@@ -71,6 +72,7 @@ export const resumeData = {
             location: "Los Angeles, CA",
             startDate: "August 2025",
             endDate: "Present",
+            // relatedProjectId: "ai-task-manager",
             bullets: [
                 "Managed outbound sales team using Linear to execute 100 cold calls weekly, generating deals-in-progress worth approximately $104,000",
                 "Produced in-depth competitor research reports on 15+ fuel card carriers and TMS software leaders",
@@ -126,6 +128,7 @@ export const resumeData = {
             location: "San Diego, CA",
             startDate: "March 2022",
             endDate: "June 2025",
+            relatedProjectId: "del-norte-videography",
             bullets: [
                 "Coordinated senior float-building initiatives, increasing attendance by 25% and winning Class Champions twice",
                 "Managed a $20,000 budget to execute events for 650 students including the Senior Picnic",
@@ -160,14 +163,14 @@ export const resumeData = {
     },
 
     interests: [
-        "Boxing",
+        "Cooking",
         "Jiu-Jitsu",
         "Soccer",
-        "Volleyball",
         "Sports Videography",
+        "Volleyball",
         "Portrait Photography",
         "Surfing",
         "Boogie Boarding",
-        "Cooking",
+        "Boxing",
     ],
 };

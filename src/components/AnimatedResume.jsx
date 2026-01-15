@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AnimatedResume = ({ title, items }) => {
     const containerRef = useRef(null);
@@ -87,6 +89,18 @@ const ResumeItem = ({ item, index }) => {
                         <p>{item.description}</p>
                     )}
                 </div>
+
+                {/* Project Link */}
+                {item.relatedProjectId && (
+                    <div className="mt-4 pt-4 border-t border-forest-bg-elevated">
+                        <Link
+                            to={`/projects#${item.relatedProjectId}`}
+                            className="inline-flex items-center text-sm font-bold text-forest-accent-main hover:text-forest-accent-gold transition-colors"
+                        >
+                            View Related Project <ArrowUpRight size={16} className="ml-1" />
+                        </Link>
+                    </div>
+                )}
             </div>
         </motion.div>
     );

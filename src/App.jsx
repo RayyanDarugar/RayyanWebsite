@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
+import Projects from './pages/Projects';
+import ProjectDetails from './pages/ProjectDetails';
 import Post from './pages/Post';
 import Contact from './pages/Contact';
 import AuroraBackground from './components/AuroraBackground';
@@ -32,6 +34,8 @@ function App() {
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+              <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
+              <Route path="/projects/:id" element={<PageWrapper><ProjectDetails /></PageWrapper>} />
               <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
               <Route path="/blog/:slug" element={<PageWrapper><Post /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
